@@ -43,8 +43,8 @@ const { className } = Astro.props;
     <div class="text-center max-w-3xl mx-auto space-y-4 scroll-fade-in">
       <Title className="">What We Do</Title>
       <Paragraph className="mt-4">
-        We transform businesses through three core services that work together
-        to create powerful digital experiences and drive measurable results.
+        We transform businesses through our core services that work together to
+        create powerful digital experiences and drive measurable results.
       </Paragraph>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -55,13 +55,15 @@ const { className } = Astro.props;
               ? "scroll-delay-1"
               : index === 1
                 ? "scroll-delay-2"
-                : "scroll-delay-3";
+                : index === 2
+                  ? "scroll-delay-3"
+                  : "scroll-delay-4";
           return (
             <Service
               title={service.title}
               features={service.features}
               icon={service.icon}
-              className={`scroll-scale-backdrop ${delayClass}`}
+              className={`scroll-scale-backdrop ${delayClass} hover:delay-0 `}
             />
           );
         })

@@ -33,6 +33,16 @@ const services = [
     ],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"/></svg>`,
   },
+  {
+    title: "AI Photoshoots",
+    features: [
+      "AI-Generated Product Photography",
+      "Custom Brand Imagery",
+      "Multiple Style Variations",
+      "Fast Turnaround Times",
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM448 416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V224h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H64V160c0-17.7 14.3-32 32-32h64.9l10.4-32.8c2.6-8.2 10.1-13.6 18.7-13.6h122.8c8.6 0 16.1 5.4 18.7 13.6L352.9 128H416c17.7 0 32 14.3 32 32v32H384c-8.8 0-16 7.2-16 16s7.2 16 16 16h64V416z"/></svg>`,
+  },
 ];
 
 const solutions: never[] = [];
