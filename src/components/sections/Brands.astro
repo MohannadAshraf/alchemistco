@@ -74,12 +74,13 @@ const brands = [
 
 export interface Props {
   className?: string;
+  id?: string;
 }
 
-const { className } = Astro.props;
+const { className, id } = Astro.props;
 ---
 
-<section class=`${className}`>
+<section id={id} class=`${className}`>
   <Container className="space-y-8">
     <div class="text-center max-w-3xl mx-auto scroll-fade-in">
       <Title>Previous Work & <GradiantText>Results</GradiantText></Title>
