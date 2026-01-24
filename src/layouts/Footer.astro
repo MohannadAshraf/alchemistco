@@ -6,20 +6,20 @@ import Paragraph from "../components/shared/Paragraph.astro";
 
 const footerNav1 = [
   {
-    itemText: "Marketing",
-    itemLink: "#",
+    itemText: "Web Development",
+    itemLink: "#services",
   },
   {
-    itemText: "Analylitics",
-    itemLink: "#",
+    itemText: "Media Buying",
+    itemLink: "#services",
   },
   {
-    itemText: "Commerce",
-    itemLink: "#",
+    itemText: "Content Creation",
+    itemLink: "#services",
   },
   {
-    itemText: "Insights",
-    itemLink: "#",
+    itemText: "Our Work",
+    itemLink: "#results",
   },
 ];
 
@@ -44,24 +44,20 @@ const footerSupport = [
 
 const footerCompany = [
   {
-    itemText: "About",
-    itemLink: "#",
+    itemText: "About Us",
+    itemLink: "#about",
   },
   {
-    itemText: "Blog",
-    itemLink: "#",
+    itemText: "Services",
+    itemLink: "#services",
   },
   {
-    itemText: "Jobs",
-    itemLink: "#",
+    itemText: "Portfolio",
+    itemLink: "#results",
   },
   {
-    itemText: "Parteners",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
+    itemText: "Contact",
+    itemLink: "#cta",
   },
 ];
 const footerLegal = [
@@ -82,23 +78,23 @@ const footerLegal = [
 
 <div class="relative mt-16">
   <span
-    class="w-20 h-20 rounded-full bg-gradient-to-br from-sky-500 from-0% via-primary via-80% to-green-600 to-110% absolute left-1/3 bottom-1/3"
+    class="w-20 h-20 rounded-full bg-gradient-to-br from-red-600 from-0% via-red-500 via-80% to-red-700 to-110% absolute left-1/3 bottom-1/3 opacity-20"
   ></span>
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-yellow-400 from-0% via-green-600 via-60% via-sky-700 via-85% to-primary to-100% absolute right-1 top-2/4"
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-500 from-0% via-red-600 via-60% via-red-700 via-85% to-red-800 to-100% absolute right-1 top-2/4 opacity-20"
   ></span>
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-sky-500 from-0% via-primary via-80% to-green-600 to-110% absolute right-1/4 bottom-0"
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-600 from-0% via-red-500 via-80% to-red-700 to-110% absolute right-1/4 bottom-0 opacity-20"
   ></span>
   <span
-    class="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 from-0% via-primary via-80% to-sky-600 to-110% absolute right-1/3 top-1/3"
+    class="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 from-0% via-red-600 via-80% to-red-700 to-110% absolute right-1/3 top-1/3 opacity-20"
   ></span>
 
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-green-500 from-0% via-primary via-80% to-sky-600 to-110% absolute left-0 top-1/3"
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-500 from-0% via-red-600 via-80% to-red-700 to-110% absolute left-0 top-1/3 opacity-20"
   ></span>
   <footer
-    class="relative bg-gradient-to-tr from-slate-100/85 to-zinc-200/85 dark:from-slate-800/85 dark:to-zinc-800/85 pt-28 rounded-t-3xl backdrop-blur-md"
+    class="relative bg-gradient-to-tr from-white/95 to-gray-100/95 dark:from-black/95 dark:to-gray-900/95 pt-28 rounded-t-3xl backdrop-blur-md border-t border-red-600/20"
   >
     <Container className="pb-8 relative overflow-auto ">
       <div
@@ -108,12 +104,11 @@ const footerLegal = [
           <div class="h-full">
             <a href="#" class="relative flex items-center gap-3">
               <div class="inline-flex text-lg font-semibold text-heading-1">
-                AgenceX
+                TheAlchemistsCo
               </div>
             </a>
             <Paragraph className={"mt-8"}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae,
-              maiores nam doloribus id magni
+              Transforming brands through innovative web development, strategic media buying, and compelling content creation. We turn your vision into digital reality.
             </Paragraph>
           </div>
 
@@ -202,7 +197,7 @@ const footerLegal = [
           class="flex justify-between items-center gap-6 md:text-lg text-heading-3"
         >
           <div>
-            &copy; <span id="year"></span> AgenceX. All right reserved
+            &copy; <span id="year"></span> TheAlchemistsCo. All rights reserved
           </div>
           <div>
             Made by <a

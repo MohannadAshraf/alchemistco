@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import GradiantText from "../shared/GradiantText.astro";
 
 import spotify from "../../assets/logos/spotify.png";
 import slack from "../../assets/logos/slack.png";
@@ -79,22 +81,29 @@ const { className } = Astro.props;
 
 <section class=`${className}`>
   <Container className="space-y-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <Title>Trusted by leading brands in the industry.</Title>
+    <div class="text-center max-w-3xl mx-auto scroll-fade-in">
+      <Title>Previous Work & <GradiantText>Results</GradiantText></Title>
+      <Paragraph className="mt-4">
+        We've helped businesses across industries achieve remarkable growth. Here's a glimpse of our track record.
+      </Paragraph>
     </div>
     <div class="flex justify-center flex-wrap gap-4">
       {
-        brands.map((brand) => (
-          <div class="p-4 sm:p-5 rounded-xl border border-box-border group bg-box-bg">
-            <Image
-              src={brand.logo}
-              width="100"
-              height="60"
-              alt={brand.name}
-              class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-            />
-          </div>
-        ))
+        brands.map((brand, index) => {
+          const delayIndex = (index % 6) + 1;
+          const delayClass = `scroll-delay-${Math.min(delayIndex, 5)}`;
+          return (
+            <div class={`p-4 sm:p-5 rounded-xl border border-box-border group bg-box-bg scroll-scale ${delayClass} transition-all duration-300 hover:border-primary hover:shadow-md hover:-translate-y-1`}>
+              <Image
+                src={brand.logo}
+                width="100"
+                height="60"
+                alt={brand.name}
+                class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-110"
+              />
+            </div>
+          );
+        })
       }
     </div>
   </Container>

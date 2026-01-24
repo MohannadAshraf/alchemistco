@@ -20,21 +20,23 @@ const { className } = Astro.props;
 
 <section id="faq" class=`${className}`>
   <Container className="">
-    <div class="text-center  max-w-3xl mx-auto">
+    <div class="text-center  max-w-3xl mx-auto scroll-fade-in">
       <Title> Frequenty Asked <GradiantText>Questions</GradiantText></Title>
     </div>
 
     <div
-      class="grid border rounded-3xl border-box-border border-box-bg bg-box-bg shadow-lg divide-y divide-slate-200 dark:divide-slate-800 max-w-3xl mx-auto mt-8 overflow-hidden"
+      class="grid border rounded-3xl border-box-border bg-box-bg shadow-sm divide-y divide-slate-200 dark:divide-slate-800 max-w-3xl mx-auto mt-8 overflow-hidden scroll-fade-in scroll-delay-1"
     >
       {
-        faqs.map((faq: FAQProps) => {
+        faqs.map((faq: FAQProps, index: number) => {
+          const delayIndex = Math.min((index % 5) + 2, 5);
+          const delayClass = `scroll-delay-${delayIndex}`;
           return (
-            <div class="py-5 px-5 hover:bg-slate-200 dark:hover:bg-slate-800">
+            <div class={`py-5 px-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-300 scroll-fade-in ${delayClass}`}>
               <details class="group">
-                <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-heading-1">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-heading-1 hover:text-primary transition-colors duration-300">
                   <span>{faq.question}</span>
-                  <span class="transition group-open:rotate-180 ">
+                  <span class="transition-transform duration-300 group-open:rotate-180 text-primary">
                     <svg
                       fill="none"
                       height="24"
@@ -53,11 +55,6 @@ const { className } = Astro.props;
                 <Paragraph className="mt-3 group-open:animate-fadeIn">
                   {faq.answer}
                 </Paragraph>
-                <!-- 
-                <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                  {faq.answer}
-                </p>
-              -->
               </details>
             </div>
           );

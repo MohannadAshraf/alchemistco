@@ -18,43 +18,50 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<!-- <section
-  id="services"
-  class=`relative bg-gradient-to-br from-blue-100 to-sky-200 dark:from-indigo-800 dark:to-green-950  ${className}`
-> -->
 <section
   id="services"
-  class=`relative  dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
+  class=`relative bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950 dark:to-black ${className}`
 >
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-sky-200 dark:from-sky-500 from-0% via-primary dark:via-primary via-80% to-green-400 dark:to-green-600 to-110%
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-200 dark:from-red-500 from-0% via-primary dark:via-primary via-80% to-red-400 dark:to-red-600 to-110%
     absolute left-1/3 bottom-1/3"
   ></span>
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-yellow-200 dark:from-yellow-400 from-0% via-sky-500 dark:via-sky-700 via-85% to-primary dark:to-primary to-100%
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-300 dark:from-red-600 from-0% via-red-500 dark:via-red-700 via-85% to-primary dark:to-primary to-100%
     absolute right-1/4 bottom-0"
   ></span>
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-green-300 dark:from-green-500 from-0% via-primary dark:via-primary via-80% to-sky-400 dark:to-sky-600 to-110%
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-200 dark:from-red-500 from-0% via-primary dark:via-primary via-80% to-red-400 dark:to-red-600 to-110%
     absolute right-1/3 top-1/3"
   ></span>
 
   <span
-    class="w-40 h-40 rounded-full bg-gradient-to-br from-green-300 dark:from-green-500 from-0% via-primary dark:via-primary via-80% to-sky-400 dark:to-sky-600 to-110%
+    class="w-40 h-40 rounded-full bg-gradient-to-br from-red-200 dark:from-red-500 from-0% via-primary dark:via-primary via-80% to-red-400 dark:to-red-600 to-110%
     absolute right-3/4 top-1/3"
   ></span>
   <Container className="space-y-10 md:sapce-y-12">
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title className="">Why Choose [Your Agency Name]?</Title>
+    <div class="text-center max-w-3xl mx-auto space-y-4 scroll-fade-in">
+      <Title className="">What We Do</Title>
+      <Paragraph className="mt-4">
+        We transform businesses through three core services that work together
+        to create powerful digital experiences and drive measurable results.
+      </Paragraph>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
-        services.map((service: ServicesProps) => {
+        services.map((service: ServicesProps, index: number) => {
+          const delayClass =
+            index === 0
+              ? "scroll-delay-1"
+              : index === 1
+                ? "scroll-delay-2"
+                : "scroll-delay-3";
           return (
             <Service
               title={service.title}
               features={service.features}
               icon={service.icon}
+              className={`scroll-scale-backdrop ${delayClass}`}
             />
           );
         })

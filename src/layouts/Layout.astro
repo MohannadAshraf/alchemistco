@@ -17,9 +17,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Agency template made with ASTROJS and TAILWINDCSS"
+      content="TheAlchemistsCo - Full-service marketing agency specializing in web development, media buying, and content creation. Transform your digital presence today."
     />
-    <title>Agency template - {title}</title>
+    <title>TheAlchemistsCo - {title}</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -121,5 +121,49 @@ const { title } = Astro.props;
         navbar.style.height = "0px";
       });
     }
+  </script>
+  <script>
+    // Sticky header with blur on scroll
+    const header = document.getElementById("navbar");
+    let lastScroll = 0;
+
+    function handleScroll() {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 50) {
+        header?.classList.add("scrolled");
+      } else {
+        header?.classList.remove("scrolled");
+      }
+      
+      lastScroll = currentScroll;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Check on load
+
+    // Scroll animations with Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          // Optionally unobserve after animation
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with scroll animation classes
+    document.addEventListener("DOMContentLoaded", () => {
+      const animatedElements = document.querySelectorAll(
+        ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale, .scroll-scale-backdrop"
+      );
+      animatedElements.forEach((el) => observer.observe(el));
+    });
   </script>
 </html>
