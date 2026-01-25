@@ -15,7 +15,7 @@ const getThemeStyle = (variant:"primary"|"secondary")=>{
 
 
 ---
-<button class={`px-8 py-4 rounded-[185px] outline-none relative overflow-hidden border-2 font-display font-medium text-lg button-playful magnetic-hover
+<button class={`px-8 py-4 rounded-[185px] outline-none relative overflow-hidden border-2 font-display font-medium text-lg button-playful
                     after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-500 after:ease-[cubic-bezier(0.28,0.03,0.76,0.99)] after:rounded-full after:top-0 after:left-0
                     ${getThemeStyle(variant)} hover:after:opacity-100 hover:after:scale-[2.5] ${className}`}>
     <slot/>

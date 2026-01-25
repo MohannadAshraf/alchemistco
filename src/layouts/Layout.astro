@@ -34,15 +34,24 @@ const { title } = Astro.props;
     <Footer />
   </body>
   <script>
+    // Force light mode - always remove dark class
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+
+    // DISABLED: Theme switching functionality (kept for future use if needed)
+    // Uncomment below to re-enable dark mode switching
+    /*
     detectSystemTheme();
 
     const switchTheme = document.querySelector(
       "[data-switch-theme]"
     ) as HTMLButtonElement;
-    switchTheme.addEventListener("click", (e) => {
-      e.preventDefault();
-      changeThemeManually();
-    });
+    if (switchTheme) {
+      switchTheme.addEventListener("click", (e) => {
+        e.preventDefault();
+        changeThemeManually();
+      });
+    }
 
     function changeThemeManually() {
       const localAppTheme = localStorage.getItem("theme");
@@ -84,6 +93,7 @@ const { title } = Astro.props;
       localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
     }
+    */
   </script>
   <script>
     const toggleMenu = document.querySelector(
@@ -168,26 +178,11 @@ const { title } = Astro.props;
       animatedElements.forEach((el) => observer.observe(el));
     });
 
-    // Magnetic hover effect for buttons and interactive elements
+    // Magnetic hover effect - DISABLED
+    // Removed magnetic hover effect - was too distracting
+    // Keeping function placeholder in case we want to add subtle effects later
     function initMagneticHover() {
-      const magneticElements = document.querySelectorAll('.magnetic-hover, .button-playful, button, a');
-      
-      magneticElements.forEach((element) => {
-        element.addEventListener('mousemove', (e) => {
-          const rect = element.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          
-          const moveX = x * 0.15;
-          const moveY = y * 0.15;
-          
-          (element as HTMLElement).style.transform = `translate(${moveX}px, ${moveY}px)`;
-        });
-        
-        element.addEventListener('mouseleave', () => {
-          (element as HTMLElement).style.transform = 'translate(0, 0)';
-        });
-      });
+      // Magnetic hover disabled - buttons now use simple CSS hover effects only
     }
 
     // Floating elements animation
