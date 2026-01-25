@@ -3,6 +3,7 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
+import RotatingText from "../shared/RotatingText.astro";
 // Professional team collaboration in modern workspace
 const aboutImageUrl = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop&q=80";
 
@@ -20,38 +21,39 @@ const { className } = Astro.props;
         About <GradiantText>TheAlchemistsCo</GradiantText>
       </Title>
       <Paragraph className="mt-6">
-        We transform digital presence into growth through web development, media buying, and content creation.
+        The perfect blend of <RotatingText words={["creativity", "strategy", "innovation", "excellence"]} className="font-bold text-primary" interval={2500} /> — we transform digital presence into growth through web development, media buying, and content creation.
       </Paragraph>
     </div>
 
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
       <div class="flex-1 w-full lg:w-1/2 scroll-slide-left">
-        <div class="relative w-full h-80 lg:h-96 rounded-3xl overflow-hidden group">
+        <div class="relative w-full h-80 lg:h-96 rounded-3xl overflow-hidden group shadow-lg shadow-primary/10">
           <img
             src={aboutImageUrl}
             alt="TheAlchemistsCo team working together"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            class="w-full h-full object-cover transition-all duration-500 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] group-hover:scale-110 group-hover:rotate-1"
           />
+          <div class="absolute inset-0 bg-gradient-to-br from-black/0 via-primary/0 to-primary/0 group-hover:from-black/10 group-hover:via-primary/10 group-hover:to-primary/10 transition-all duration-500"></div>
         </div>
       </div>
       
       <div class="flex-1 w-full lg:w-1/2 space-y-6 scroll-slide-right">
-        <div class="scroll-fade-in scroll-delay-1">
-          <h3 class="text-2xl font-bold text-heading-1 mb-3">Our Story</h3>
+        <div class="scroll-fade-in scroll-delay-1 p-6 rounded-2xl hover:bg-gradient-to-br hover:from-red-50 hover:to-white dark:hover:from-gray-800 dark:hover:to-gray-900 transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] hover:scale-[1.02]">
+          <h3 class="text-2xl font-display font-bold text-heading-1 mb-3">Our Story</h3>
           <Paragraph>
             We bring together developers, strategists, and creators to deliver integrated marketing solutions that work.
           </Paragraph>
         </div>
         
-        <div class="scroll-fade-in scroll-delay-2">
-          <h3 class="text-2xl font-bold text-heading-1 mb-3">Our Approach</h3>
+        <div class="scroll-fade-in scroll-delay-2 p-6 rounded-2xl hover:bg-gradient-to-br hover:from-red-50 hover:to-white dark:hover:from-gray-800 dark:hover:to-gray-900 transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] hover:scale-[1.02]">
+          <h3 class="text-2xl font-display font-bold text-heading-1 mb-3">Our Approach</h3>
           <Paragraph>
             Data-driven insights meet creative innovation. We craft solutions that look great and drive measurable growth.
           </Paragraph>
         </div>
         
-        <div class="scroll-fade-in scroll-delay-3">
-          <h3 class="text-2xl font-bold text-heading-1 mb-3">Our Values</h3>
+        <div class="scroll-fade-in scroll-delay-3 p-6 rounded-2xl hover:bg-gradient-to-br hover:from-red-50 hover:to-white dark:hover:from-gray-800 dark:hover:to-gray-900 transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] hover:scale-[1.02]">
+          <h3 class="text-2xl font-display font-bold text-heading-1 mb-3">Our Values</h3>
           <Paragraph>
             Integrity, transparency, and results. Your success is our success.
           </Paragraph>

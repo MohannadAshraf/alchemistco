@@ -15,12 +15,14 @@ const { className } = Astro.props;
 <section id="cta" class=`pb-20 ${className}`>
   <Container>
     <div
-      class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 dark:from-gray-900 dark:to-gray-800 border border-red-200 dark:border-red-900/30 scroll-scale"
+      class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-3xl bg-gradient-to-br from-red-50 via-white to-red-50 dark:from-black dark:via-gray-900 dark:to-black 
+      border-2 border-primary/20 dark:border-primary/30 scroll-scale overflow-hidden"
     >
-      <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/5 to-primary/5 animate-pulse blur-3xl"></div>
+      <div class="mx-auto text-center max-w-xl md:max-w-2xl relative z-10">
         <h1
           class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
-          font-bold text-heading-1 scroll-fade-in"
+          font-display font-bold text-heading-1 scroll-fade-in"
         >
           Ready to
 

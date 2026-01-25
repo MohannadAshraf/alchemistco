@@ -24,7 +24,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Bricolage Grotesque", "Inter", -apple-system, system-ui, sans-serif;
 }
 
 [data-toggle-nav][data-open-nav="true"] #line1 {
@@ -74,11 +74,11 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
-/* Scroll animations */
+/* Playful scroll animations with bouncy curves */
 .scroll-fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99), transform 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99);
 }
 
 .scroll-fade-in.visible {
@@ -89,7 +89,7 @@ body {
 .scroll-slide-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 1s cubic-bezier(0.28, 0.03, 0.76, 0.99), transform 1s cubic-bezier(0.28, 0.03, 0.76, 0.99);
 }
 
 .scroll-slide-left.visible {
@@ -100,7 +100,7 @@ body {
 .scroll-slide-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 1s cubic-bezier(0.28, 0.03, 0.76, 0.99), transform 1s cubic-bezier(0.28, 0.03, 0.76, 0.99);
 }
 
 .scroll-slide-right.visible {
@@ -110,8 +110,8 @@ body {
 
 .scroll-scale {
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: scale(0.85);
+  transition: opacity 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99), transform 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99);
 }
 
 .scroll-scale.visible {
@@ -122,8 +122,8 @@ body {
 /* Special animation for elements with backdrop-blur to maintain blur during animation */
 .scroll-scale-backdrop {
   opacity: 0.01;
-  transform: scale(0.9);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: scale(0.85);
+  transition: opacity 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99), transform 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99);
   will-change: opacity, transform;
 }
 
@@ -138,5 +138,156 @@ body {
 .scroll-delay-3 { transition-delay: 0.3s; }
 .scroll-delay-4 { transition-delay: 0.4s; }
 .scroll-delay-5 { transition-delay: 0.5s; }
+
+/* Playful animations inspired by Wana Studios */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Bouncy, playful transitions */
+.bounce-hover {
+  transition: transform 0.3s cubic-bezier(0.28, 0.03, 0.76, 0.99);
+}
+
+.bounce-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Playful button animations */
+@keyframes button-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.button-playful {
+  transition: all 0.3s cubic-bezier(0.28, 0.03, 0.76, 0.99);
+}
+
+.button-playful:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(45, 23, 255, 0.3);
+}
+
+.button-playful:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px) rotate(-5deg);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Magnetic hover effect */
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.28, 0.03, 0.76, 0.99);
+}
+
+/* Cursor trail effect */
+.cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.4), transparent);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+/* Number counter animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-up {
+  animation: countUp 0.6s ease-out;
+}
+
+/* Glow effect on hover */
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.4), 0 0 40px rgba(220, 38, 38, 0.2);
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text-reveal {
+  animation: textReveal 0.8s cubic-bezier(0.28, 0.03, 0.76, 0.99) forwards;
+}
+
+/* Rotating text specific styles */
+.rotating-text-word {
+  display: inline-block;
+  min-width: 0.3em;
+}
+
+/* Interactive card tilt effect */
+.card-tilt {
+  transition: transform 0.3s cubic-bezier(0.28, 0.03, 0.76, 0.99);
+}
+
+/* Pulse animation for attention */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
 
 

@@ -1,0 +1,105 @@
+---
+export interface Props {
+  words: string[];
+  className?: string;
+  interval?: number;
+}
+
+const { words, className = "", interval = 2000 } = Astro.props;
+const wordsJson = JSON.stringify(words);
+---
+
+<div class={`rotating-text-container ${className}`} data-words={wordsJson} data-interval={interval}>
+  <span class="rotating-text-word inline-block"></span>
+</div>
+
+<style>
+  .rotating-text-container {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .rotating-text-word {
+    display: inline-block;
+    text-align: left;
+  }
+</style>
+
+<script>
+  function initRotatingText() {
+    const containers = document.querySelectorAll('.rotating-text-container');
+    
+    containers.forEach((container) => {
+      const words = JSON.parse(container.getAttribute('data-words') || '[]');
+      const interval = parseInt(container.getAttribute('data-interval') || '2000');
+      const wordElement = container.querySelector('.rotating-text-word') as HTMLElement;
+      
+      if (!wordElement || words.length === 0) return;
+      
+      // Calculate max width to prevent jitter
+      const tempSpan = document.createElement('span');
+      tempSpan.style.visibility = 'hidden';
+      tempSpan.style.position = 'absolute';
+      tempSpan.style.fontSize = window.getComputedStyle(wordElement).fontSize;
+      tempSpan.style.fontFamily = window.getComputedStyle(wordElement).fontFamily;
+      tempSpan.style.fontWeight = window.getComputedStyle(wordElement).fontWeight;
+      document.body.appendChild(tempSpan);
+      
+      let maxWidth = 0;
+      words.forEach((word: string) => {
+        tempSpan.textContent = word;
+        maxWidth = Math.max(maxWidth, tempSpan.offsetWidth);
+      });
+      
+      document.body.removeChild(tempSpan);
+      
+      // Set fixed width to prevent jitter
+      wordElement.style.minWidth = `${maxWidth}px`;
+      wordElement.style.display = 'inline-block';
+      wordElement.style.textAlign = 'left';
+      
+      let currentIndex = 0;
+      
+      // Set initial word
+      wordElement.textContent = words[0];
+      wordElement.classList.add('fade-in');
+      
+      function rotateWord() {
+        wordElement.classList.remove('fade-in');
+        wordElement.classList.add('fade-out');
+        
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % words.length;
+          wordElement.textContent = words[currentIndex];
+          wordElement.classList.remove('fade-out');
+          wordElement.classList.add('fade-in');
+        }, 300);
+      }
+      
+      setInterval(rotateWord, interval);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRotatingText);
+  } else {
+    initRotatingText();
+  }
+</script>
+
+<style>
+  .rotating-text-word {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .rotating-text-word.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .rotating-text-word.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+</style>
+

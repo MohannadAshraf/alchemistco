@@ -20,8 +20,10 @@ const { title } = Astro.props;
       content="TheAlchemistsCo - Full-service marketing agency specializing in web development, media buying, and content creation. Transform your digital presence today."
     />
     <title>TheAlchemistsCo - {title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/style/custom.css" />
@@ -164,6 +166,70 @@ const { title } = Astro.props;
         ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale, .scroll-scale-backdrop"
       );
       animatedElements.forEach((el) => observer.observe(el));
+    });
+
+    // Magnetic hover effect for buttons and interactive elements
+    function initMagneticHover() {
+      const magneticElements = document.querySelectorAll('.magnetic-hover, .button-playful, button, a');
+      
+      magneticElements.forEach((element) => {
+        element.addEventListener('mousemove', (e) => {
+          const rect = element.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          const moveX = x * 0.15;
+          const moveY = y * 0.15;
+          
+          (element as HTMLElement).style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+        
+        element.addEventListener('mouseleave', () => {
+          (element as HTMLElement).style.transform = 'translate(0, 0)';
+        });
+      });
+    }
+
+    // Floating elements animation
+    function initFloatingElements() {
+      const floatingElements = document.querySelectorAll('.float-animation, .float-animation-delayed');
+      floatingElements.forEach((el) => {
+        el.classList.add('float-animation');
+      });
+    }
+
+    // Card tilt effect on mouse move - faster and more responsive
+    function initCardTilt() {
+      const cards = document.querySelectorAll('.card-tilt, [class*="Service"], [class*="card"]');
+      
+      cards.forEach((card) => {
+        (card as HTMLElement).style.transition = 'transform 0.1s ease-out';
+        
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = (y - centerY) / 6;
+          const rotateY = (centerX - x) / 6;
+          
+          (card as HTMLElement).style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          (card as HTMLElement).style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+      });
+    }
+
+    // Initialize all interactive features
+    document.addEventListener("DOMContentLoaded", () => {
+      initMagneticHover();
+      initFloatingElements();
+      initCardTilt();
     });
   </script>
 </html>

@@ -12,12 +12,16 @@ const { title, features, icon, className = "" } = Astro.props;
 ---
 
 <div
-  class={`p-5 sm:p-6 lg:p-8 relative overflow-hidden rounded-3xl shadow-lg shadow-red-900/20 dark:shadow-red-950/40
-  bg-gradient-to-tr from-slate-100/70 to-zinc-200/60 dark:from-slate-800/10 dark:to-zinc-800/10 backdrop-blur-md 
-  hover:bg-black/10 hover:dark:bg-slate-700/10 transition-[transform,box-shadow,background-color] duration-200 hover:shadow-md hover:shadow-red-900/30 dark:hover:shadow-red-950/50 hover:-translate-y-2 group ${className}`}
+  class={`p-5 sm:p-6 lg:p-8 relative overflow-hidden rounded-3xl shadow-lg shadow-primary/10 dark:shadow-primary/20
+  bg-gradient-to-tr from-white/90 to-red-50/50 dark:from-slate-800/30 dark:to-black/50 backdrop-blur-md border border-primary/10
+  hover:bg-gradient-to-tr hover:from-red-50 hover:to-white hover:dark:from-black/50 hover:dark:to-primary/10 
+  transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] hover:shadow-xl hover:shadow-primary/20 dark:hover:shadow-primary/30 
+  hover:-translate-y-3 hover:scale-[1.02] group bounce-hover card-tilt ${className}`}
 >
   <div
-    class="rounded-xl p-3 text-heading-1 w-max relative bg-slate-200 dark:bg-slate-800 transition-[background-color,color,transform] duration-200 group-hover:bg-primary group-hover:text-white group-hover:scale-110"
+    class="rounded-xl p-3 text-heading-1 w-max relative bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 
+    transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary-light 
+    group-hover:text-white group-hover:scale-110 group-hover:rotate-3"
   >
     <slot set:html={icon} />
   </div>

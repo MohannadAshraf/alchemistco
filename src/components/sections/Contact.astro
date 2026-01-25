@@ -1,0 +1,180 @@
+---
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import GradiantText from "../shared/GradiantText.astro";
+import Button from "../shared/Button.astro";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section id="contact" class={`${className}`}>
+  <Container className="space-y-10 md:space-y-12">
+    <div class="text-center max-w-3xl mx-auto scroll-fade-in">
+      <Title>
+        Get In <GradiantText>Touch</GradiantText>
+      </Title>
+      <Paragraph className="mt-6">
+        Ready to transform your digital presence? Let's start a conversation about your project.
+      </Paragraph>
+    </div>
+
+    <div class="max-w-2xl mx-auto scroll-scale">
+      <form
+        class="space-y-6 p-8 rounded-3xl bg-gradient-to-tr from-white/90 to-red-50/50 dark:from-slate-800/30 dark:to-black/50 backdrop-blur-md border border-primary/10 shadow-lg"
+        id="contact-form"
+      >
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-heading-2 mb-2"
+            >
+              Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-box-border bg-white dark:bg-slate-800 text-heading-1 
+              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-heading-2 mb-2"
+            >
+              Email *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-box-border bg-white dark:bg-slate-800 text-heading-1 
+              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+              placeholder="your@email.com"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="company"
+            class="block text-sm font-medium text-heading-2 mb-2"
+          >
+            Company
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            class="w-full px-4 py-3 rounded-xl border border-box-border bg-white dark:bg-slate-800 text-heading-1 
+            focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+            placeholder="Your company"
+          />
+        </div>
+
+        <div>
+          <label
+            for="service"
+            class="block text-sm font-medium text-heading-2 mb-2"
+          >
+            Service Interested In
+          </label>
+          <select
+            id="service"
+            name="service"
+            class="w-full px-4 py-3 rounded-xl border border-box-border bg-white dark:bg-slate-800 text-heading-1 
+            focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+          >
+            <option value="">Select a service</option>
+            <option value="web-development">Web Development</option>
+            <option value="media-buying">Media Buying</option>
+            <option value="content-creation">Content Creation</option>
+            <option value="ai-photoshoots">AI Photoshoots</option>
+            <option value="multiple">Multiple Services</option>
+          </select>
+        </div>
+
+        <div>
+          <label
+            for="message"
+            class="block text-sm font-medium text-heading-2 mb-2"
+          >
+            Message *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="w-full px-4 py-3 rounded-xl border border-box-border bg-white dark:bg-slate-800 text-heading-1 
+            focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
+            placeholder="Tell us about your project..."
+          ></textarea>
+        </div>
+
+        <div class="flex justify-center pt-4">
+          <Button variant="primary" className="min-w-[200px]">
+            <span class="flex relative z-[5] text-center">Send Message</span>
+          </Button>
+        </div>
+
+        <div
+          id="form-message"
+          class="hidden text-center text-sm mt-4 p-4 rounded-xl"
+        ></div>
+      </form>
+    </div>
+  </Container>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const messageDiv = document.getElementById('form-message');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Show loading state
+      const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<span class="flex relative z-[5] text-center">Sending...</span>';
+      
+      // In a real application, you would send this to your backend
+      // For now, we'll simulate a successful submission
+      setTimeout(() => {
+        if (messageDiv) {
+          messageDiv.classList.remove('hidden');
+          messageDiv.classList.add('bg-green-100', 'dark:bg-green-900/30', 'text-green-800', 'dark:text-green-200');
+          messageDiv.textContent = 'Thank you! Your message has been sent. We\'ll get back to you soon.';
+        }
+        
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalText;
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          if (messageDiv) {
+            messageDiv.classList.add('hidden');
+          }
+        }, 5000);
+      }, 1000);
+    });
+  }
+</script>
+
