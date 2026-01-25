@@ -24,7 +24,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Bricolage Grotesque", "Inter", -apple-system, system-ui, sans-serif;
+  font-family: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 [data-toggle-nav][data-open-nav="true"] #line1 {

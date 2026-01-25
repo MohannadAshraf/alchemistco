@@ -21,7 +21,7 @@ export default {
         "heading-3": "rgb(var(--heading-3))",
       },
       fontFamily: {
-        sans: ['"Bricolage Grotesque"', "Inter", "-apple-system", "system-ui", "sans-serif"],
+        sans: ['"Bricolage Grotesque"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
         display: ['"Bricolage Grotesque"', "sans-serif"],
       },
       screens: {
