@@ -49,7 +49,7 @@ const solutions: never[] = [];
 
 const faqs = [
   {
-    question: "What services does TheAlchemistsCo offer?",
+    question: "What services does AlchemistsCo offer?",
     answer:
       "We specialize in three core areas: Web Development (custom websites, e-commerce, responsive design), Media Buying (strategic ad placement, multi-platform campaigns, ROI optimization), and Content Creation (copywriting, visual design, video production, brand voice development).",
   },
@@ -89,12 +89,12 @@ const faqs = [
       "Yes! We offer integrated packages that combine web development, media buying, and content creation for maximum impact. These packages are designed to provide comprehensive digital marketing solutions at competitive rates.",
   },
   {
-    question: "How do I get started with TheAlchemistsCo?",
+    question: "How do I get started with AlchemistsCo?",
     answer:
       "Simply reach out through our contact form or schedule a free consultation. We'll discuss your goals, assess your needs, and provide a customized proposal outlining how we can help transform your digital presence.",
   },
   {
-    question: "What makes TheAlchemistsCo different from other agencies?",
+    question: "What makes AlchemistsCo different from other agencies?",
     answer:
       "We combine technical expertise with creative excellence and data-driven strategies. Our integrated approach means your web development, media buying, and content work together seamlessly, creating a cohesive digital experience that drives real results for your business.",
   },
