@@ -4,6 +4,7 @@ import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import ByNumber from "./ByNumber.astro";
+import heroImage from "../../assets/images/heroImage.JPG";
 
 // Modern digital marketing workspace - professional and creative
 const heroImageUrl =
@@ -62,9 +63,10 @@ const { className } = Astro.props;
           class="absolute inset-0 bg-gradient-to-br from-black/20 via-primary/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         >
         </div>
-        <img
-          src={heroImageUrl}
+        <Image
+          src={heroImage}
           alt="Modern digital marketing agency workspace"
+          loading={"lazy"}
           class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96 transition-all duration-500 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] group-hover:scale-105 group-hover:rotate-1 relative z-10 shadow-2xl"
         />
       </div>

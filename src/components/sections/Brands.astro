@@ -7,6 +7,10 @@ import GradiantText from "../shared/GradiantText.astro";
 import voidImage from "../../assets/images/void.jpeg"
 import femmeImage from "../../assets/images/femme.jpeg";
 import tasteImage from "../../assets/images/taste.jpeg";
+import result1 from "../../assets/images/result 1.jpeg";
+import result2 from "../../assets/images/result 2.jpeg";
+import result3 from "../../assets/images/result 3.jpeg";
+
 
 // Placeholder images - replace with actual screenshots
 const mediaBuyingResults = [
@@ -14,11 +18,11 @@ const mediaBuyingResults = [
     id: 1,
     title: "E-commerce Campaign",
     client: "Fashion Brand",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    image: result1.src,
     metrics: {
-      roas: "4.2x",
-      revenue: "$250K",
-      cpa: "$35",
+      roas: "10.4x",
+      revenue: "125k EGP",
+      cpa: "12k EGP",
       period: "3 months"
     },
     description: "Scaled Facebook & Instagram ads for a fashion e-commerce brand"
@@ -27,7 +31,7 @@ const mediaBuyingResults = [
     id: 2,
     title: "SaaS Lead Generation",
     client: "Tech Startup",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    image: result2.src,
     metrics: {
       roas: "5.8x",
       revenue: "$180K",
@@ -40,7 +44,7 @@ const mediaBuyingResults = [
     id: 3,
     title: "Local Service Business",
     client: "Home Services",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+    image: result3.src,
     metrics: {
       roas: "6.5x",
       revenue: "$95K",
@@ -231,7 +235,7 @@ const { className, id } = Astro.props;
                     <p class="text-2xl font-bold text-heading-1">{result.metrics.revenue}</p>
                   </div>
                   <div class="space-y-1">
-                    <p class="text-xs text-heading-3 uppercase tracking-wide">CPA</p>
+                    <p class="text-xs text-heading-3 uppercase tracking-wide">Ad Spend</p>
                     <p class="text-2xl font-bold text-heading-1">{result.metrics.cpa}</p>
                   </div>
                   <div class="space-y-1">
