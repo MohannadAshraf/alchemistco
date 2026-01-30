@@ -4,6 +4,9 @@ import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import GradiantText from "../shared/GradiantText.astro";
+import voidImage from "../../assets/images/void.jpeg"
+import femmeImage from "../../assets/images/femme.jpeg";
+import tasteImage from "../../assets/images/taste.jpeg";
 
 // Placeholder images - replace with actual screenshots
 const mediaBuyingResults = [
@@ -111,9 +114,9 @@ const aiPhotoshoots = [
 const contentWork = [
   {
     id: 1,
-    title: "Social Media Campaign",
-    client: "Beauty Brand",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+    title: "Social Media Posts",
+    client: "VOID",
+    image: voidImage.src,
     type: "Social Media",
     postsCount: "100+",
     platforms: ["Instagram", "TikTok", "Facebook"],
@@ -121,23 +124,23 @@ const contentWork = [
   },
   {
     id: 2,
-    title: "Blog Content Series",
-    client: "SaaS Company",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop",
-    type: "Blog Writing",
+    title: "SOCIAL MEDIA POSTS",
+    client: "FEMME NUDE",
+    image: femmeImage.src,
+    type: "Social Media",
     postsCount: "40+",
-    platforms: ["Blog", "Medium", "LinkedIn"],
-    description: "SEO-optimized blog content series driving organic traffic and leads"
+    platforms: ["Instagram", "TikTok", "Facebook"],
+    description: "SEO-optimized social media content series driving organic traffic and leads"
   },
   {
     id: 3,
-    title: "Video Content Package",
-    client: "E-commerce Store",
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3c7bcfc7?w=800&h=600&fit=crop",
-    type: "Video Production",
+    title: "SOCIAL MEDIA POSTS",
+    client: "TASTE OF THE WILD",
+    image: tasteImage.src,
+    type: "Social Media",
     postsCount: "20+",
-    platforms: ["YouTube", "Instagram", "TikTok"],
-    description: "Engaging video content including product demos, tutorials, and brand stories"
+    platforms: ["Instagram", "TikTok", "YouTube"],
+    description: "Engaging social media content focused on brand storytelling and audience engagement"
   }
 ];
 
