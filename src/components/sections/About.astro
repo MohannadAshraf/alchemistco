@@ -4,7 +4,7 @@ import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import RotatingText from "../shared/RotatingText.astro";
-import aboutImage from "../../assets/images/aboutImage.JPG";
+import aboutImage from "../../assets/images/aboutImage.jpg";
 import { Image } from "astro:assets";
 // Professional team collaboration in modern workspace
 const aboutImageUrl =
@@ -39,6 +39,7 @@ const { className } = Astro.props;
         >
           <Image
             src={aboutImage}
+            loading={"lazy"}
             alt="alchemistsCo team working together"
             class="w-full h-full object-cover transition-all duration-500 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] group-hover:scale-110 group-hover:rotate-1"
           />
