@@ -7,9 +7,18 @@ import GradiantText from "../shared/GradiantText.astro";
 import voidImage from "../../assets/images/void.jpeg"
 import femmeImage from "../../assets/images/femme.jpeg";
 import tasteImage from "../../assets/images/taste.jpeg";
+import beyootImage from "../../assets/images/beyoot.jpeg";
+import nutraImage from "../../assets/images/nutra.jpeg";
 import result1 from "../../assets/images/result 1.jpeg";
 import result2 from "../../assets/images/result 2.jpeg";
 import result3 from "../../assets/images/result 3.jpeg";
+import result4 from "../../assets/images/result 4.jpeg";
+import result5 from "../../assets/images/result 5.jpeg";
+import website1 from "../../assets/images/website 1.jpeg";
+import website2 from "../../assets/images/website 2.jpeg";
+import website3 from "../../assets/images/website 3.jpeg";
+import website4 from "../../assets/images/website 4.png";
+import website5 from "../../assets/images/website 5.png";
 
 
 // Placeholder images - replace with actual screenshots
@@ -52,37 +61,85 @@ const mediaBuyingResults = [
       period: "4 weeks"
     },
     description: "Google Ads and Facebook campaigns for local service provider"
+  },
+  {
+    id: 4,
+    title: "E-commerce Campaign",
+    client: "E-commerce Brand",
+    image: result4.src,
+    metrics: {
+      roas: "10x",
+      revenue: "317k EGP",
+      cpa: "30k EGP",
+      period: "4 weeks"
+    },
+    description: "Google Ads and Facebook campaigns for local service provider"
+  },
+  {
+    id: 5,
+    title: "E-commerce Campaign",
+    client: "E-commerce Brand",
+    image: result5.src,
+    metrics: {
+      roas: "10x",
+      revenue: "317k EGP",
+      cpa: "250k AED",
+      period: "4 weeks"
+    },
+    description: "Google Ads and Facebook campaigns for local service provider"
   }
 ];
 
 const websitesBuilt = [
-  {
+      {
     id: 1,
+    title: "Company Website",
+    client: "Global Overseas Trading",
+    image: website4.src,
+    url: "www.onlinegot.com/",
+    tech: ["Astro", "React", "GSAP"],
+    description: "Stunning portfolio site with smooth animations and interactions"
+  },
+    {
+    id: 2,
+    title: "Company Website",
+    client: "Kemex Trade",
+    image: website5.src,
+    url: "www.kemex-trade.vercel.app/",
+    tech: ["Astro", "React", "GSAP"],
+    description: "Stunning portfolio site with smooth animations and interactions"
+  },
+    {
+    id: 3,
+    title: "Clothing Brand Website",
+    client: "Void",
+    image: website3.src,
+    url: "creative-portfolio.com",
+    tech: ["Astro", "React", "GSAP"],
+    description: "Stunning portfolio site with smooth animations and interactions"
+  },
+
+  {
+    id: 4,
+    title: "Clothing Brand Website",
+    client: "Zero Wear",
+    image: website2.src,
+    url: "www.zerowear.shop/",
+    tech: ["Vue.js", "TypeScript", "Tailwind"],
+    description: "Complex dashboard with real-time analytics and data visualization"
+  },
+  
+  {
+    id: 5,
     title: "Modern E-commerce Platform",
-    client: "Retail Brand",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+    client: "NaturesTrace",
+    image: website1.src,
     url: "example.com",
     tech: ["React", "Next.js", "Shopify"],
     description: "Fully responsive e-commerce site with custom checkout flow"
   },
-  {
-    id: 2,
-    title: "SaaS Dashboard",
-    client: "Tech Company",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-    url: "saas-app.com",
-    tech: ["Vue.js", "TypeScript", "Tailwind"],
-    description: "Complex dashboard with real-time analytics and data visualization"
-  },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    client: "Creative Agency",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-    url: "creative-portfolio.com",
-    tech: ["Astro", "React", "GSAP"],
-    description: "Stunning portfolio site with smooth animations and interactions"
-  }
+
+  
 ];
 
 const aiPhotoshoots = [
@@ -145,7 +202,30 @@ const contentWork = [
     postsCount: "20+",
     platforms: ["Instagram", "TikTok", "YouTube"],
     description: "Engaging social media content focused on brand storytelling and audience engagement"
-  }
+  },
+    {
+    id: 4,
+    title: "SOCIAL MEDIA POSTS",
+    client: "Beyoot Furniture",
+    image: beyootImage.src,
+    type: "Social Media",
+    postsCount: "20+",
+    platforms: ["Instagram", "TikTok", "YouTube"],
+    description: "Engaging social media content focused on brand storytelling and audience engagement"
+  },
+    {
+    id: 5,
+    title: "SOCIAL MEDIA POSTS",
+    client: "Nutra Nuggets",
+    image: nutraImage.src,
+    type: "Social Media",
+    postsCount: "20+",
+    platforms: ["Instagram", "TikTok", "YouTube"],
+    description: "Engaging social media content focused on brand storytelling and audience engagement"
+  },
+  
+
+
 ];
 
 export interface Props {
@@ -206,7 +286,7 @@ const { className, id } = Astro.props;
           return (
             <div class={`group relative overflow-hidden rounded-2xl border border-box-border bg-box-bg shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 scroll-fade-in ${delayClass}`}>
               <!-- Screenshot/Image -->
-              <div class="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
+              <div class="relative h-72 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 <img
                   src={result.image}
                   alt={result.title}
@@ -262,7 +342,7 @@ const { className, id } = Astro.props;
           return (
             <div class={`group relative overflow-hidden rounded-2xl border border-box-border bg-box-bg shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 scroll-fade-in ${delayClass}`}>
               <!-- Screenshot/Image -->
-              <div class="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
+              <div class="relative h-44 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 <img
                   src={website.image}
                   alt={website.title}

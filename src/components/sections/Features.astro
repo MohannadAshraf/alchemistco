@@ -88,27 +88,48 @@ const { className } = Astro.props;
         Why Choose <GradiantText>AlchemistsCo</GradiantText>?
       </Title>
     </div>
-    <div class="flex flex-row flex-wrap mt-8 justify-center gap-7">
-      {
-        features.map((feature: FeatureProps, index: number) => {
-          const delayIndex = (index % 6) + 1;
-          const delayClass = `scroll-delay-${Math.min(delayIndex, 5)}`;
-          return (
-            <div
-              class={`flex items-center text-heading-3 font-medium justify-center scroll-fade-in ${delayClass} 
-              transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] hover:text-primary hover:scale-105 cursor-default px-4 py-2 rounded-full hover:bg-red-50 dark:hover:bg-gray-800`}
-            >
-              <span
-                class="font-bold rounded-full w-8 h-8 mr-2 bg-gradient-to-br from-black to-primary text-white inline-flex justify-center items-center 
-              transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)] group-hover:scale-110 group-hover:rotate-12 shadow-lg"
-              >
-                &checkmark;
-              </span>
-              {feature.title}
-            </div>
-          );
-        })
-      }
-    </div>
+ <div
+  class="
+    mt-8
+    flex flex-col
+    sm:flex-row sm:flex-wrap
+    items-start
+    sm:justify-center
+    gap-7
+  "
+>
+
+  {features.map((feature: FeatureProps, index: number) => {
+    const delayIndex = (index % 6) + 1;
+    const delayClass = `scroll-delay-${Math.min(delayIndex, 5)}`;
+
+    return (
+      <div
+        class={`
+          group flex items-center text-heading-3 font-medium
+          scroll-fade-in ${delayClass}
+          transition-all duration-300 ease-[cubic-bezier(0.28,0.03,0.76,0.99)]
+          hover:text-primary hover:scale-105 cursor-default
+          px-4 py-2 rounded-full
+          hover:bg-red-50 dark:hover:bg-gray-800
+        `}
+      >
+        <span
+          class="
+            font-bold rounded-full w-8 h-8 mr-2
+            bg-gradient-to-br from-black to-primary text-white
+            inline-flex justify-center items-center
+            transition-all duration-300
+            shadow-lg
+          "
+        >
+          ✓
+        </span>
+        {feature.title}
+      </div>
+    );
+  })}
+</div>
+
   </Container>
 </section>
