@@ -62,32 +62,33 @@ const mediaBuyingResults = [
     },
     description: "Google Ads and Facebook campaigns for local service provider"
   },
-  {
+    {
     id: 4,
     title: "E-commerce Campaign",
     client: "E-commerce Brand",
-    image: result4.src,
+    image: result5.src,
     metrics: {
-      roas: "10x",
-      revenue: "317k EGP",
-      cpa: "250k AED",
-      period: "4 weeks"
+      roas: "17.25x",
+      revenue: "138k EGP",
+      cpa: "8k EGP",
+      period: "1 day"
     },
-    description: "Google Ads and Facebook campaigns for local service provider"
+    description: "Massive ROAS in just one day during a one month campaign for an E-commerce Brand"
   },
   {
     id: 5,
     title: "E-commerce Campaign",
     client: "E-commerce Brand",
-    image: result5.src,
+    image: result4.src,
     metrics: {
-      roas: "10x",
-      revenue: "317k EGP",
-      cpa: "30k EGP",
-      period: "4 weeks"
+      roas: "4.8x",
+      revenue: "120M AED",
+      cpa: "250k AED",
+      period: "1 year"
     },
     description: "Google Ads and Facebook campaigns for local service provider"
-  }
+  },
+
 ];
 
 const websitesBuilt = [
@@ -286,7 +287,7 @@ const { className, id } = Astro.props;
           return (
             <div class={`group relative overflow-hidden rounded-2xl border border-box-border bg-box-bg shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 scroll-fade-in ${delayClass}`}>
               <!-- Screenshot/Image -->
-              <div class="relative h-72 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
+              <div class="relative h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 <img
                   src={result.image}
                   alt={result.title}
